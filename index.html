@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+
+</head>
+<body>
+    <header>
+        <h2>My Dashboard</h2>
+        <h2>🔔  Sharon</h2>
+        <button id="dark">Dark Mode</button>
+        <div id="cart-link">
+        <a href="cart.html">🛒 Cart: <span id="cart-count">0</span></a>
+    </div>
+    </header>
+    <div id="same-line">
+    <nav>
+        <a href="#dashboard"><h3>🏠 Dashboard</h3></a>
+        <a href="#products"><h3>📦 Products</h3></a>
+        <a href="#orders"><h3>🛒 Orders</h3></a>
+        <a href="#costumers"><h3>👥 Customers</h3></a>
+        <a href="#settings"><h3>⚙ Settings</h3></a>
+    </nav>
+    <section id="dashboard">
+    <div class="cards">
+        <div class="card">
+            <h4>Total Sales</h4>
+            <h5>2,450$</h5>
+            <h6>+12% this month</h6>
+        </div>
+        <div class="card">
+            <h4>Orders</h4>
+            <h5>34</h5>
+            <h6>+5 this week</h6>
+        </div>
+        <div class="card">
+            <h4>Costumers</h4>
+            <h5>128</h5>
+            <h6>+8 this month</h6>
+        </div>
+        <div class="card">
+            <h4>Products</h4>
+            <h5>42</h5>
+            <h6>3 out of stock</h6>
+        </div>
+
+        
+    
+    </div>
+    </section>
+    </div>
+    <section id="orders">
+    <div class="titles">
+            <h5>Product</h5>
+            <h5>Costumer</h5>
+            <h5>Price</h5>
+            <h5>Status</h5>
+        </div>
+    <div class="table">
+        
+        <div class="info">
+            <p>Headphones</p>
+            <p>David</p>
+            <p>80$</p>
+            <span class="paid">Paid</span>
+        </div>
+        <div class="info">
+            <p>Keyboard</p>
+            <p>John</p>
+            <p>60$</p>
+            <span class="pending">Pending</span>
+        </div>
+        <div class="info">
+            <p>Smart Watch</p>
+            <p>Sarah</p>
+            <p>120$</p>
+            <span class="paid">Paid</span>
+        </div>
+        <div class="info">
+            <p>Mouse</p>
+            <p>Daniel</p>
+            <p>35$</p>
+            <span class="cancelled">Cancelled</span>
+        </div>
+    </div>
+    </section>
+    <section id="products">
+        <div id="title-prod">
+        <h2>Popular Products</h2>
+        </div>
+        <div class="cards-prod">
+        <div class="card-prod">
+            <img src="wireless headphones.jpeg">
+            <h5>Wireless headphones</h5>
+            <h5>80$</h5>
+            <h5>⭐⭐⭐⭐⭐</h5>
+            <button class="buy" id="wireless-headphones">Buy Now!</button>
+        </div>
+        <div class="card-prod">
+            <img src="keyboard.jpeg">
+            <h5>Keyboard</h5>
+            <h5>60$</h5>
+            <h5>⭐⭐⭐⭐⭐</h5>
+            <button class="buy" id="keyboard">Buy Now!</button>
+        </div>
+        <div class="card-prod">
+            <img src="smart watch.jpeg">
+            <h5>Smart Watch</h5>
+            <h5>120$</h5>
+            <h5>⭐⭐⭐⭐⭐</h5>
+            <button class="buy" id="smart-watch">Buy Now!</button>
+        </div>
+        </div>
+    </section>
+    <script src="script.js"></script>
+</body>
+</html>

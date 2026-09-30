@@ -1,0 +1,248 @@
+html {
+    scroll-behavior: smooth;
+}
+
+header {
+    display: flex;
+    justify-content:space-between;
+    gap:10%;
+    background-color: rgb(255, 243, 227);
+    border-radius: 15px;
+    align-items: center;
+    top: 0;
+    position: sticky;
+    padding-left: 15px;
+    
+
+}
+
+nav {
+    display: flex;
+    flex-direction: column;
+    position:relative;
+    gap:15px;
+    background-color: rgb(210, 210, 210);
+    width: 180px;
+    padding: 20px;
+    
+    border-radius: 15px;
+    
+}
+
+nav a{
+    text-decoration: none;
+    color: #444;
+    font-weight: 500;
+}
+
+.cards {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    gap:40px;
+}
+
+#dashboard {
+    padding: 30px;
+}
+
+.cards .card{
+    border:1px solid rgb(197, 195, 195);
+    text-align: center;
+    width: auto;
+    padding: 20px;
+    height:fit-content;
+    border-radius: 15px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.cards .card:hover {
+    background-color: #e1e0e0;
+    transform: translateY(-5px);
+}
+
+#same-line {
+    display: flex;
+    justify-content: stretch;
+    gap: 30px;
+}
+
+.titles {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    border-bottom: 1px solid gray;
+    align-items: center;
+    text-align: center;
+}
+.table .info{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    align-items: center;
+    text-align: center;
+    
+    
+}
+
+.table {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+#products {
+    text-align: center;
+    align-items: center;
+}
+
+#products .cards-prod{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr ;
+    justify-content: space-around;
+    margin-left: 15px;
+}
+
+#products .card-prod {
+    border:1px solid rgb(197, 195, 195);
+    width: 150px;
+    border-radius: 15px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+#products .card-prod:hover {
+    background-color: #e1e0e0;
+    transform: translateY(-5px);
+}
+
+.buy {
+    display: inline-block;
+    padding: 10px 15px;
+    background-color: #e1e0e0;
+    color: black;
+    text-decoration: none;
+    border-radius: 15px;
+}
+
+.buy:hover {
+    background-color: #ccc;
+}
+
+#products .card-prod img {
+    width:100px;
+    height:100px;
+
+}
+
+@media (max-width: 700px) {
+
+    #same-line {
+        flex-direction: column;
+    }
+
+    nav {
+        flex-direction: row;
+        width: auto;
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+
+    .cards {
+        grid-template-columns: 1fr;
+        align-items: center;
+    }
+
+    #products .cards-prod {
+        grid-template-columns: 1fr;
+        justify-items: center;
+    }
+
+    .table .info {
+        grid-template-columns: 1fr 1fr;
+        gap: 5px;
+        padding: 10px;
+    }
+}
+
+body.dark {
+    background-color: #222;
+    color: white;
+}
+
+body.dark header {
+    background-color: #333;
+}
+
+
+
+body.dark nav {
+    background-color: #333;
+}
+
+
+body.dark .card, 
+body.dark .card-prod {
+    background-color: #333;
+    color: white;
+}
+
+body.dark .card:hover, 
+body.dark .card-prod:hover {
+    background-color: #444;
+}
+
+body.dark nav a {
+    color: white;
+}
+
+#cart-link a{
+    text-decoration: none;
+    color: #8d8d8d;
+}
+
+#cart-link a:hover {
+    text-decoration: underline;
+}
+
+.btn-back , .minus , .plus {
+    display: inline-block;
+    padding: 10px 15px;
+    background-color: #e1e0e0;
+    color: black;
+    text-decoration: none;
+    border-radius: 15px;
+}
+
+.btn-back:hover , .minus:hover , .plus:hover{
+    background-color: #ccc;
+}
+
+.cart-item {
+    display: flex;
+    justify-content: stretch;
+    border:1px solid gray;
+    width:fit-content;
+    padding-right: 40px;
+    align-items: center;
+    background-color: #e1e0e0;
+    color: black;
+     text-decoration: none;
+    border-radius: 15px;
+}
+
+    
+    
+   
+.cart-item .txt {
+    padding-left: 15px;
+    display: grid;
+    flex-direction: column;
+    grid-template-columns: 1fr;
+    
+}
+
+.cart-item img {
+    width:100px;
+    height:100px;
+
+}
+
