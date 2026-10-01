@@ -8,10 +8,11 @@
 
 </head>
 <body>
-    <header>
+    <header id="adeapy">
         <h2>My Dashboard</h2>
         <h2>🔔  Sharon</h2>
         <button id="dark">Dark Mode</button>
+        <input type="text" id="search" placeholder="Search products...">
         <div id="cart-link">
         <a href="cart.html">🛒 Cart: <span id="cart-count">0</span></a>
     </div>
@@ -23,6 +24,7 @@
         <a href="#orders"><h3>🛒 Orders</h3></a>
         <a href="#costumers"><h3>👥 Customers</h3></a>
         <a href="#settings"><h3>⚙ Settings</h3></a>
+        
     </nav>
     <section id="dashboard">
     <div class="cards">
@@ -93,6 +95,7 @@
         </div>
         <div class="cards-prod">
         <div class="card-prod">
+            <button class="like" id="headphones">🤍</button>
             <img src="wireless headphones.jpeg">
             <h5>Wireless headphones</h5>
             <h5>80$</h5>
@@ -100,6 +103,7 @@
             <button class="buy" id="wireless-headphones">Buy Now!</button>
         </div>
         <div class="card-prod">
+            <button class="like" id="keyboard">🤍</button>
             <img src="keyboard.jpeg">
             <h5>Keyboard</h5>
             <h5>60$</h5>
@@ -107,6 +111,7 @@
             <button class="buy" id="keyboard">Buy Now!</button>
         </div>
         <div class="card-prod">
+            <button class="like" id="watch">🤍</button>
             <img src="smart watch.jpeg">
             <h5>Smart Watch</h5>
             <h5>120$</h5>
@@ -115,6 +120,17 @@
         </div>
         </div>
     </section>
+    <button id="liked-products">❤️ Liked Products</button>
+
+<div id="liked-popup" class="popup">
+    <div class="popup-content">
+        <button id="close-popup">✕</button>
+        <h2>❤️ Liked Products</h2>
+        <div id="liked-list"></div>
+    </div>
+</div>
+    
+    
     <script src="script.js"></script>
 </body>
 </html>

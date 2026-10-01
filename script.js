@@ -75,9 +75,13 @@ if (cart) {
 
 
 }
-const total = document.getElementById("total");
-total.innerHTML =  `Total Price: ${totalPrice(JSON.parse(localStorage.getItem("cart")) || [])} $`;
 
+const total = document.getElementById("total");
+
+if (total) {
+    total.innerHTML = `Total Price: ${totalPrice(JSON.parse(localStorage.getItem("cart")) || [])} $`;
+    
+}
 
 const del = document.getElementById("del");
 
@@ -100,6 +104,8 @@ function howMany(arr, item) {
     return count;
 }
 
+
+
 function totalPrice (products) {
     const uniqueProducts = new Set(products);
     let sum = 0;
@@ -115,6 +121,8 @@ function totalPrice (products) {
 
     return sum;
 }
+
+
 
 const minus = document.querySelectorAll(".minus");
 minus.forEach(function(button) {
@@ -162,3 +170,125 @@ plus.forEach(function(button) {
         location.reload();
     });
 });
+
+
+const login = document.getElementById("login-button");
+
+if (login) {
+    
+    login.addEventListener("click", function() {
+        const username = document.getElementById("username").value;
+        const password = document.getElementById("password").value;
+
+        if(username === "sharonoren" && password === "sharonTheBest01") {
+            alert("login workes succesfully!");
+            localStorage.setItem("loggedIn", "true");
+            window.location.href = "index.html";
+        } else {
+            document.getElementById("error").textContent = "Username or password is incorrect";
+        }
+    });
+
+    
+}
+
+const dashboard = document.getElementById("adeapy");
+
+if (dashboard) {
+    if (localStorage.getItem("loggedIn") !== "true") {
+        window.location.href = "login.html";
+    }
+}
+
+const search = document.getElementById("search");
+const products = document.querySelectorAll(".card-prod");
+search.addEventListener("input" , function() {
+    const text = search.value.toLowerCase();
+
+    products.forEach(function(product) {
+        const name = product.textContent.toLowerCase();
+
+        if(name.includes(text)) {
+            product.style.display = "block";
+        } else {
+            product.style.display = "none";
+        }
+    })
+})
+
+const like = document.querySelectorAll(".like");
+
+        
+const arr = JSON.parse(localStorage.getItem("like-prod")) || [];
+like.forEach(function(button) {
+    button.addEventListener("click", function() {
+        if(button.textContent === "❤️") {
+            button.textContent = "🤍"
+            index = arr.indexOf(`${button.id}`);
+            if (index !== -1) {
+                arr.splice(index, 1);
+                 
+            }
+        localStorage.setItem("like-prod", JSON.stringify(arr));
+        
+        } else {
+        button.textContent = "❤️";
+         if(button.id === "headphones") {
+            arr.push("headphones");
+         } else if(button.id === "keyboard") {
+            arr.push("keyboard");
+         } else if(button.id === "watch") {
+            arr.push("watch");
+         }
+
+         localStorage.setItem("like-prod", JSON.stringify(arr));
+        }
+    });
+
+    
+});
+
+
+const likedButton = document.getElementById("liked-products");
+const popup = document.getElementById("liked-popup");
+const closePopup = document.getElementById("close-popup");
+const likedList = document.getElementById("liked-list");
+
+if (likedButton && popup && closePopup && likedList) {
+    likedButton.addEventListener("click", function() {
+        popup.style.display = "flex";
+        const liked = JSON.parse(localStorage.getItem("like-prod")) || [];
+        likedList.innerHTML = "";
+        liked.forEach(function(product) {
+            if (product === "headphones") {
+                likedList.innerHTML += 
+                    `<div class="liked-item">
+                        <img src="wireless headphones.jpeg">
+                        <h3>Wireless Headphones</h3>
+                        <p>$80</p>
+                    </div>`;
+
+            } else if (product === "keyboard") {
+
+                likedList.innerHTML += 
+                        `<div class="liked-item">
+                        <img src="keyboard.jpeg">
+                        <h3>Keyboard</h3>
+                        <p>$60</p>
+                    </div>`;
+
+            } else if (product === "watch") {
+                likedList.innerHTML += 
+                    `<div class="liked-item">
+                        <img src="smart watch.jpeg">
+                        <h3>Smart Watch</h3>
+                        <p>$120</p>
+                    </div>`;
+            }
+        });
+    });
+
+    closePopup.addEventListener("click", function() {
+        popup.style.display = "none";
+    });
+}
